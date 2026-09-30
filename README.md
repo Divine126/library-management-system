@@ -32,8 +32,7 @@ borrowing, returning, overdue tracking, and AI-powered reading recommendations.
 ## Setup
 1. Clone the repo.
 2. Install dependencies: pip install -r requirements.txt
-3. Create a `.env` file in the project root with your Gemini API key: GEMINI_API_KEY=your_key_here
-4. Run the program: python main.py
+3. Run the program: python main.py
 
    
 ## Project Files
