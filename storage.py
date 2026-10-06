@@ -1,3 +1,4 @@
+from datetime import date
 from book import Book
 from member import Member
 
@@ -5,7 +6,7 @@ def save_books(books, path):
     with open(path, "w") as file:
         for book in books.values():
             file.write(
-                f"{book.title}|{book.author}|{book.isbn}|{book.copies_available}\n"
+                f"{book.title}|{book.author}|{book.isbn}|{str(book.copies_available)}\n"
             )
 
 def load_books(path):
@@ -48,7 +49,7 @@ def save_members(members, path):
             pairs = []
 
             for isbn, due_date in member.borrowed_books.items():
-                pairs.append(f"{isbn}:{due_date}")
+                pairs.append(f"{isbn}:{str(due_date)}")
 
             joined = ";".join(pairs)
 
@@ -77,7 +78,7 @@ def load_members(path):
                 if parts[3] != "":
                     for piece in parts[3].split(";"):
                         isbn, due_date = piece.split(":")
-                        borrowed[isbn] = due_date
+                        borrowed[isbn] = date.fromisoformat(due_date)
 
                 member = Member(
                     parts[0],
