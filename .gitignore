@@ -1,4 +1,7 @@
 __pycache__/
 *.pyc
+temp_auto_push.bat
 books.txt
 members.txt
+.gitignore
+branch_structure.json
